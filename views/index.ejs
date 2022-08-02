@@ -21419,7 +21419,7 @@ let init = async ()=>{
       channel.on("MemberJoined",handleUserJoined)
       channel.on("MemberLeft",handleUserLeft)
       client.on("MessageFromPeer",handleMessageFromPeer)
-      localStream = await navigator.mediaDevices.getUserMedia({video:true,audio:true})
+      localStream = await navigator.mediaDevices.getUserMedia(constraints)
       document.getElementById("user-1").srcObject = localStream
 }
 let handleUserLeft = async(MemberId)=>{
@@ -21449,7 +21449,7 @@ let createPeerConnection = async (MemberId)=>{
       document.getElementById("user-2").style.display="block"
       document.getElementById("user-1").classList.add("smallFrame")
       if(!localStream){
-            localStream = await navigator.mediaDevices.getUserMedia({video:true,audio:true})
+            localStream = await navigator.mediaDevices.getUserMedia(constraints)
             document.getElementById("user-1").srcObject = localStream
       }
       localStream.getTracks().forEach((track) => {
