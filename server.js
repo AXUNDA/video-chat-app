@@ -10,7 +10,7 @@ app.get("/", (req, res) => {
 })
 app.get("/room/:id", (req, res) => {
       const roomId = req.params.id
-      res.render("index", { roomId: roomId,key:"ba2f9661b13648449e4e3e82796208e7" })
+      res.render("index", { roomId: roomId,key:"" })
       // res.render("index")
 })
 
